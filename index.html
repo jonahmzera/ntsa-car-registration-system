@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTSA Charges Calculator</title>
+</head>
+<body>
+    <h3>Try the System</h3>
+
+<input type="text" id="name" placeholder="Client Name"><br><br>
+<input type="number" id="passengers" placeholder="Number of Passengers"><br><br>
+
+<button onclick="calculate()">Calculate Charges</button>
+
+<p id="result"></p>
+
+<script>
+function calculate() {
+    let passengers = document.getElementById("passengers").value;
+    let total = passengers * 1000;
+    document.getElementById("result").innerText =
+        "Total NTSA Charges: KES " + total;
+}
+</script>
+
+</body>
+</html>
