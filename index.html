@@ -7,10 +7,12 @@
     <title>NTSA Charges Calculator</title>
 </head>
 <body>
+    <h2>NTSA Vehicle Registration System (Simulation)</h2>
     <h3>Try the System</h3>
 
 <input type="text" id="name" placeholder="Client Name"><br><br>
 <input type="number" id="passengers" placeholder="Number of Passengers"><br><br>
+<input type="text" id="name" placeholder="Client Name"><br><br>
 
 <button onclick="calculate()">Calculate Charges</button>
 
@@ -18,10 +20,20 @@
 
 <script>
 function calculate() {
+    let name = document.getElementById("name").value;
     let passengers = document.getElementById("passengers").value;
+
+    if (passengers <= 0) {
+        alert("Enter valid number of passengers");
+        return;
+    }
+
     let total = passengers * 1000;
+
     document.getElementById("result").innerText =
-        "Total NTSA Charges: KES " + total;
+        "Client: " + name +
+        "\nPassengers: " + passengers +
+        "\nTotal Charges: KES " + total;
 }
 </script>
 
